@@ -19,7 +19,7 @@ public class MessengerClient {
 
     private boolean logged = false;
 
-    private String userName = "";
+    private String userName = null;
 
     public MessengerClient(String host, int port) throws IOException {
         messageListeners = new ArrayList();
@@ -96,6 +96,10 @@ public class MessengerClient {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getMyName(){
+        return userName;
     }
 
     public void sendMessage(Message message) {
